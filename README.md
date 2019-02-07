@@ -2,3 +2,5 @@
 Supports IS 40a, IS 40b, IS 40c, IS 40d, IS 40f, IS 40g, IS 40h navigation road signs.
 
 Generates PDF ready for print.
+
+![sample generated image](https://github.com/nekromoff/bicycle-road-signs-generator/blob/master/sample.png "Sample")
