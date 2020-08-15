@@ -18,7 +18,7 @@
                 </div>
                 <h2>Smerová tabuľa pre cyklistov: IS 40a, IS 40b, IS 40c, IS 40d, IS 40f, IS 40g, IS 40h</h2>
 <?php
-error_reporting(0);
+error_reporting(E_ALL);
 require_once __DIR__ . '/vendor/autoload.php';
 setlocale(LC_ALL, 'sk_SK.UTF-8');
 
@@ -40,6 +40,7 @@ if (isset($_POST['generate'])) {
         } else {
             $size = array(800, 178);
         }
+
         $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8',
             'format'                       => $size,
             'fontDir'                      => array_merge($fontDirs, [
@@ -56,8 +57,6 @@ if (isset($_POST['generate'])) {
             'default_font'                 => 'tern',
         ]);
         $mpdf->SetAutoPageBreak(false);
-
-        $mpdf->SetImportUse();
 
         $source = $_POST['sign'] . '-' . $_POST['type'] . '.pdf';
         $mpdf->SetSourceFile('sources/' . $source);
