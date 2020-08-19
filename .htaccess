@@ -1,3 +1,5 @@
 RewriteEngine On
+RewriteRule ^img/(.*)/(.*)-(.*)-(.*)-(.*)\.png$ roadsign.php?width=$1&sign=$2&type=$3&number=$4&targets=$5 [NC,L]
+RewriteRule ^img/(.*)/(.*)-(.*)-(.*)\.png$ roadsign.php?width=$1&sign=$2&type=$3&number=$4 [NC,L]
 RewriteRule ^img/(.*)-(.*)-(.*)-(.*)\.png$ roadsign.php?sign=$1&type=$2&number=$3&targets=$4 [NC,L]
 RewriteRule ^img/(.*)-(.*)-(.*)\.png$ roadsign.php?sign=$1&type=$2&number=$3 [NC,L]
